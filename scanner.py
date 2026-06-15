@@ -435,21 +435,31 @@ def run_live(cfg):
 
     deals = sort_deals(deals)
 
-    output = {
-        "generated_at": now.isoformat().replace("+00:00", "Z"),
-        "routes_watched": len(routes),
-        "deals": deals,
-    }
-
+    # Always keep price history fresh (it feeds the 'typical' median).
     history_records = prune_history(history_records, cfg["history_days"])
     save_history(history_records)
-    save_deals(output)
+
+    # Never blow away the last good deals.json. If this scan found nothing
+    # (network failure, all routes errored, or everything filtered out),
+    # leave the previously published cheapest deals in place rather than
+    # overwriting them with an empty list.
+    if deals:
+        output = {
+            "generated_at": now.isoformat().replace("+00:00", "Z"),
+            "routes_watched": len(routes),
+            "deals": deals,
+        }
+        save_deals(output)
+        wrote = f"{DEALS_FILE}, {DEALS_JS_FILE}, {HISTORY_FILE}"
+    else:
+        print("  [KEEP] no deals this scan — preserving previous deals.json")
+        wrote = str(HISTORY_FILE)
 
     print(f"\n=== SCAN COMPLETE ===")
     print(f"  API calls made  : {total_calls}")
     print(f"  History records : {len(history_records)}")
     print(f"  Deals published : {len(deals)}")
-    print(f"\nWrote: {DEALS_FILE}, {DEALS_JS_FILE}, {HISTORY_FILE}")
+    print(f"\nWrote: {wrote}")
 
 
 # ---------------------------------------------------------------------------
