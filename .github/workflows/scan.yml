@@ -2,7 +2,7 @@ name: Scan Flight Deals
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # every 6 hours — change this one line to adjust cadence
+    - cron: "30 2 * * *"  # daily at 08:00 IST (02:30 UTC) — change this one line to adjust cadence
   workflow_dispatch:        # manual run button in GitHub Actions UI
 
 permissions:
