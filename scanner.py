@@ -384,13 +384,6 @@ def run_live(cfg):
                         print(f"  [SKIP non-INR] {key} {dep}: {f.price!r}")
                         continue
 
-                    # Append every valid INR fare to history
-                    history_records.append({
-                        "route": key,
-                        "price_inr": price_inr,
-                        "ts": now.isoformat(),
-                    })
-
                     if best is None or price_inr < best["price_inr"]:
                         best = {
                             "origin": o,
@@ -412,6 +405,15 @@ def run_live(cfg):
 
         if best:
             candidates[key] = best
+            # Record ONLY the cheapest valid INR fare for this route this scan.
+            # 'typical' is then the median of the usual cheapest price over time,
+            # so drop% means "today's cheapest vs the typical cheapest" — a real
+            # deal signal, not noise from premium/multi-stop fares in the pool.
+            history_records.append({
+                "route": key,
+                "price_inr": best["price_inr"],
+                "ts": now.isoformat(),
+            })
         else:
             print(f"  [NO CANDIDATE] {key}: no valid INR fares found across all windows")
 

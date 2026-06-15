@@ -9,11 +9,17 @@ separate static frontend can fetch it via the raw GitHub URL.
 
 Every run of `scanner.py`:
 1. Reads `config.json` for routes, date windows, and thresholds.
-2. Queries Google Flights (via `fast-flights`) for every route × date-window × stay-night combination.
-3. Appends every valid INR fare to `history.json` (90-day rolling window).
-4. Computes "% below typical" using the **median** of that route's price history.
-5. Filters to deals ≥ 20 % below typical (or Google-signalled "low" for cold-start routes).
+2. Queries Google Flights (via `fast-flights`, forcing `curr=INR`) for every route × date-window × stay-night combination.
+3. Records the **single cheapest** valid INR fare per route to `history.json` (one sample per scan, 90-day rolling window).
+4. Computes "% below typical" using the **median of that route's cheapest-per-scan history** — i.e. today's cheapest vs. the typical cheapest.
+5. Filters to deals ≥ 20 % below typical (or Google-signalled "low" for cold-start routes with < `min_samples_for_typical` history).
 6. Overwrites `deals.json` and `deals.js` with the ranked deal list.
+
+> **Cold-start:** each scan adds one sample per route, so a route needs
+> `min_samples_for_typical` scans (default 8 ≈ 2 days at 6-hourly cadence)
+> before it shows a history-based drop %. Until then it only appears when
+> Google itself flags the price as "low". This keeps every figure traceable
+> to real observed data — nothing is fabricated to fill the early window.
 
 ## Quick start
 
