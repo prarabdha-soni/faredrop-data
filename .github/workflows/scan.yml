@@ -22,7 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install fast-flights typing_extensions
+        run: pip install fast-flights typing-extensions
 
       - name: Run scanner
         run: python scanner.py
