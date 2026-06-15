@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install typing-extensions
-          python -m pip install fast-flights
+          python -m pip install -r requirements.txt
+          python -c "from fast_flights import FlightData, Passengers, get_flights; print('fast-flights import OK')"
 
       - name: Run scanner
         run: python scanner.py

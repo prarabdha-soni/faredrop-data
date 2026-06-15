@@ -1,2 +1,2 @@
 typing-extensions>=4.0.0
-fast-flights
+fast-flights==2.2
