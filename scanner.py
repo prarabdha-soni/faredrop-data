@@ -316,7 +316,17 @@ def run_demo(cfg):
 # ---------------------------------------------------------------------------
 
 def run_live(cfg):
-    from fast_flights import FlightData, Passengers, get_flights  # noqa: lazy import
+    # Lazy-import fast-flights ONLY in the real path.
+    # We call get_flights_from_filter directly (instead of the public get_flights
+    # wrapper) because only the lower-level function plumbs through `currency`.
+    # The public wrapper sends curr="" so Google serves the runner's geo currency
+    # (USD on US-hosted CI), which the INR currency guard then rejects wholesale.
+    # Forcing currency="INR" makes Google price the page in ₹ regardless of IP.
+    from fast_flights.core import get_flights_from_filter  # noqa: lazy import
+    from fast_flights.filter import TFSData  # noqa: lazy import
+    from fast_flights.flights_impl import FlightData, Passengers  # noqa: lazy import
+
+    currency = cfg.get("currency", "INR")
 
     now = datetime.now(timezone.utc)
     cities = cfg["cities"]
@@ -349,18 +359,21 @@ def run_live(cfg):
                 time.sleep(sleep_s)
 
             try:
-                result = get_flights(
-                    flight_data=[
-                        FlightData(date=dep, from_airport=o, to_airport=d),
-                        FlightData(date=ret, from_airport=d, to_airport=o),
-                    ],
-                    trip="round-trip",
-                    seat="economy",
-                    passengers=Passengers(
-                        adults=1, children=0,
-                        infants_in_seat=0, infants_on_lap=0,
+                result = get_flights_from_filter(
+                    TFSData.from_interface(
+                        flight_data=[
+                            FlightData(date=dep, from_airport=o, to_airport=d),
+                            FlightData(date=ret, from_airport=d, to_airport=o),
+                        ],
+                        trip="round-trip",
+                        seat="economy",
+                        passengers=Passengers(
+                            adults=1, children=0,
+                            infants_in_seat=0, infants_on_lap=0,
+                        ),
                     ),
-                    fetch_mode="fallback",
+                    currency=currency,
+                    mode="fallback",
                 )
                 total_calls += 1
                 google_signal = getattr(result, "current_price", None)
