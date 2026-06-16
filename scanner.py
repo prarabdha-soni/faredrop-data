@@ -90,19 +90,37 @@ def save_leg_cache(cache):
         json.dump(cache, f, indent=2)
 
 
-def prune_leg_cache(cache, now):
+def prune_leg_cache(cache, now, max_age_days=0):
     """Drop legs whose travel date has passed (codes are 3 letters, so the last
-    three dash-fields are the YYYY-MM-DD date)."""
+    three dash-fields are the YYYY-MM-DD date). Also drops legs not re-seen
+    within max_age_days so combos are built from recent prices, not old lows."""
     today = now.date()
     kept = {}
     for k, v in cache.items():
         parts = k.split("-")
         try:
-            if datetime.strptime("-".join(parts[-3:]), "%Y-%m-%d").date() >= today:
-                kept[k] = v
+            if datetime.strptime("-".join(parts[-3:]), "%Y-%m-%d").date() < today:
+                continue  # travel date passed
         except ValueError:
-            kept[k] = v
+            pass
+        if leg_is_stale(v, now, max_age_days):
+            continue  # banked too long ago to trust the price
+        kept[k] = v
     return kept
+
+
+def leg_is_stale(leg, now, max_age_days):
+    """A banked leg price is stale if not re-seen within max_age_days."""
+    if max_age_days is None or max_age_days <= 0:
+        return False
+    ts = leg.get("ts")
+    if not ts:
+        return True
+    try:
+        seen = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    return (now - seen).days >= max_age_days
 
 
 def parse_inr(price_str):
@@ -129,6 +147,26 @@ def is_expired(deal, now):
     except (KeyError, ValueError, TypeError):
         return True
     return dep < now.date()
+
+
+def is_stale(deal, now, max_age_days):
+    """A stored deal is stale if it hasn't been re-validated in max_age_days.
+
+    Cheapest-ever keeps the lowest price seen, but a low banked long ago may no
+    longer be bookable. Once stale, the next successful scan is allowed to
+    refresh it to the current cheapest even if that's higher — so what's on the
+    board stays real. max_age_days <= 0 disables staleness (true cheapest-ever).
+    """
+    if max_age_days is None or max_age_days <= 0:
+        return False
+    ts = deal.get("last_updated")
+    if not ts:
+        return True
+    try:
+        seen = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    return (now - seen).days >= max_age_days
 
 
 def make_deal(candidate, cities, now, first_seen):
@@ -198,13 +236,20 @@ def merge_deals(cfg, candidates, cities, now, scanned_keys):
         if key not in scanned_keys:
             continue  # not scanned this run — leave prior deal as-is
 
+        max_age = cfg.get("deal_max_age_days", 0)
         prior = board.get(key)
         prior_valid = prior is not None and not is_expired(prior, now)
+        prior_fresh = prior_valid and not is_stale(prior, now, max_age)
         today = candidates.get(key)
 
-        if today and (not prior_valid or today["price_inr"] < prior["price_inr"]):
+        if today and prior_fresh and today["price_inr"] < prior["price_inr"]:
             board[key] = make_deal(today, cities, now, first_seen=now.isoformat().replace("+00:00", "Z"))
-            note = "new low" if prior_valid else ("fresh" if prior is None else "replaced expired")
+            print(f"  [TRACK] {key}: ₹{today['price_inr']:,} (new low)")
+        elif today and not prior_fresh:
+            # Prior is absent, expired, or gone stale → refresh to the current
+            # cheapest (even if higher) so the board stays bookable.
+            board[key] = make_deal(today, cities, now, first_seen=now.isoformat().replace("+00:00", "Z"))
+            note = "fresh" if prior is None else ("replaced expired" if not prior_valid else "refreshed stale")
             print(f"  [TRACK] {key}: ₹{today['price_inr']:,} ({note})")
         elif prior_valid:
             kept = "no scan" if today is None else f"≥ stored ₹{prior['price_inr']:,}"
@@ -414,7 +459,8 @@ def run_live(cfg):
     routes = scan_routes(cfg)
     scanned_keys = {f"{r['from']}-{r['to']}" for r in routes}
     history_records = load_history()
-    leg_cache = prune_leg_cache(load_leg_cache(), now)  # cheapest-seen per leg, banked across runs
+    leg_max_age = cfg.get("leg_max_age_days", 5)
+    leg_cache = prune_leg_cache(load_leg_cache(), now, leg_max_age)  # recent cheapest per leg
 
     candidates = {}
     total_calls = [0]  # mutable counter shared with the throttled fetch helper
@@ -446,7 +492,10 @@ def run_live(cfg):
                 print(f"  [ERROR] {origin}→{dest} {date} (try {attempt}): {msg}")
                 time.sleep(random.uniform(8, 15))  # cool-off; timeouts mean rate-limiting
 
-        if live and (stored is None or live["price_inr"] < stored["price_inr"]):
+        stored_fresh = stored is not None and not leg_is_stale(stored, now, leg_max_age)
+        if live and (not stored_fresh or live["price_inr"] < stored["price_inr"]):
+            # Bank when there's no fresh stored price (new or revalidating a
+            # stale one, even if higher) or when live beats the stored low.
             leg_cache[pkey] = {**live, "ts": now.isoformat()}
             best = live
             print(f"  [LEG] {origin}→{dest} {date}: ₹{live['price_inr']:,} (banked)")

@@ -8,6 +8,8 @@
     "BOM-BKK": ["KUL"]
   },
   "interline_overnight": true,
+  "deal_max_age_days": 1,
+  "leg_max_age_days": 5,
   "history_days": 90,
   "min_samples_for_typical": 8,
   "min_drop_to_show": 0.20,
