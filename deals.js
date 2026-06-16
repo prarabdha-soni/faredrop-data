@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-16T08:25:11.132670Z",
+  "generated_at": "2026-06-16T10:03:32.302547Z",
   "routes_watched": 12,
   "deals": [
     {
@@ -52,7 +52,7 @@ window.DEALS = {
       "destination": "BKK",
       "origin_city": "Mumbai",
       "dest_city": "Bangkok",
-      "price_inr": 22825,
+      "price_inr": 22812,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
@@ -60,20 +60,40 @@ window.DEALS = {
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
       "google_signal": "high",
-      "airline": "Thai Vietjet Air + Thai Vietjet Air",
+      "airline": "BOM\u2192BKK / BKK\u2192BOM",
       "stops": 0,
       "depart_date": "2026-09-04",
       "return_date": "2026-09-14",
-      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+BOM+to+BKK+on+2026-09-04+through+2026-09-14",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDRqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTE0agUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
       "fare_type": "separate_tickets",
-      "outbound_airline": "Thai Vietjet Air",
+      "outbound_airline": "BOM\u2192BKK",
       "outbound_stops": 0,
-      "outbound_price_inr": 10753,
-      "return_airline": "Thai Vietjet Air",
+      "outbound_price_inr": 10747,
+      "return_airline": "BKK\u2192BOM",
       "return_stops": 0,
-      "return_price_inr": 12072,
-      "first_seen": "2026-06-16T08:09:57.620408Z",
-      "last_updated": "2026-06-16T08:09:57.620408Z"
+      "return_price_inr": 12065,
+      "outbound_legs": [
+        {
+          "from": "BOM",
+          "to": "BKK",
+          "date": "2026-09-04",
+          "airline": "Thai Vietjet Air",
+          "stops": 0,
+          "price_inr": 10747
+        }
+      ],
+      "return_legs": [
+        {
+          "from": "BKK",
+          "to": "BOM",
+          "date": "2026-09-14",
+          "airline": "Thai Vietjet Air",
+          "stops": 0,
+          "price_inr": 12065
+        }
+      ],
+      "first_seen": "2026-06-16T10:03:32.302547Z",
+      "last_updated": "2026-06-16T10:03:32.302547Z"
     },
     {
       "id": "DEL-DXB",
