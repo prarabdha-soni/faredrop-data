@@ -4,10 +4,10 @@
   "fetch_mode": "local",
   "fetch_retries": 1,
   "interline_hubs": {
-    "DEL-DPS": ["SGN", "KUL"],
-    "BOM-BKK": []
+    "DEL-DPS": ["SGN", "KUL", "SIN"],
+    "BOM-BKK": ["KUL"]
   },
-  "interline_overnight": false,
+  "interline_overnight": true,
   "history_days": 90,
   "min_samples_for_typical": 8,
   "min_drop_to_show": 0.20,

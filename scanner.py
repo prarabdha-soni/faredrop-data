@@ -26,6 +26,7 @@ CONFIG_FILE = BASE / "config.json"
 HISTORY_FILE = BASE / "history.json"
 DEALS_FILE = BASE / "deals.json"
 DEALS_JS_FILE = BASE / "deals.js"
+LEG_CACHE_FILE = BASE / "legs.json"
 
 
 def load_config():
@@ -68,6 +69,40 @@ def save_deals(obj):
         f.write("window.DEALS = ")
         json.dump(obj, f, indent=2)
         f.write(";\n")
+
+
+def load_leg_cache():
+    """Persistent cheapest-seen price per one-way leg, keyed 'O-D-YYYY-MM-DD'.
+
+    This is what makes free/eventual-consistency converge: scraping is flaky
+    (~14-30 legs land per run), but each run banks the legs it got, so multi-leg
+    self-transfer combos assemble across runs even though no single run lands
+    every leg of a combo at once.
+    """
+    if LEG_CACHE_FILE.exists():
+        with open(LEG_CACHE_FILE) as f:
+            return json.load(f)
+    return {}
+
+
+def save_leg_cache(cache):
+    with open(LEG_CACHE_FILE, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def prune_leg_cache(cache, now):
+    """Drop legs whose travel date has passed (codes are 3 letters, so the last
+    three dash-fields are the YYYY-MM-DD date)."""
+    today = now.date()
+    kept = {}
+    for k, v in cache.items():
+        parts = k.split("-")
+        try:
+            if datetime.strptime("-".join(parts[-3:]), "%Y-%m-%d").date() >= today:
+                kept[k] = v
+        except ValueError:
+            kept[k] = v
+    return kept
 
 
 def parse_inr(price_str):
@@ -379,35 +414,54 @@ def run_live(cfg):
     routes = scan_routes(cfg)
     scanned_keys = {f"{r['from']}-{r['to']}" for r in routes}
     history_records = load_history()
+    leg_cache = prune_leg_cache(load_leg_cache(), now)  # cheapest-seen per leg, banked across runs
 
     candidates = {}
     total_calls = [0]  # mutable counter shared with the throttled fetch helper
 
     def fetch_leg(origin, dest, date):
-        """One throttled, retrying one-way lookup; caches by (o,d,date)."""
-        cache_key = (origin, dest, date)
-        if cache_key in fetch_leg.cache:
-            return fetch_leg.cache[cache_key]
+        """Cheapest known price for a one-way leg = min(live fetch, banked cache).
 
-        best, signal = None, None
+        Live success banks the price (keeping the cheaper of new vs stored).
+        Live failure falls back to the banked price, so a leg scraped on an
+        earlier run still contributes to today's combinations.
+        """
+        memo_key = (origin, dest, date)
+        if memo_key in fetch_leg.memo:
+            return fetch_leg.memo[memo_key]
+
+        pkey = f"{origin}-{dest}-{date}"
+        stored = leg_cache.get(pkey)
+        live, signal = None, None
         for attempt in range(1, retries + 2):
             if total_calls[0] > 0:
                 time.sleep(random.uniform(1.5, 3.5))
             try:
-                best, signal = cheapest_oneway(query, origin, dest, date, currency, mode)
+                live, signal = cheapest_oneway(query, origin, dest, date, currency, mode)
                 total_calls[0] += 1
-                tag = f"₹{best['price_inr']:,}" if best else "no INR fare"
-                print(f"  [LEG] {origin}→{dest} {date}: {tag}")
                 break
             except Exception as exc:
                 total_calls[0] += 1
-                msg = str(exc).splitlines()[0][:80]
+                msg = str(exc).splitlines()[0][:60]
                 print(f"  [ERROR] {origin}→{dest} {date} (try {attempt}): {msg}")
                 time.sleep(random.uniform(8, 15))  # cool-off; timeouts mean rate-limiting
 
-        fetch_leg.cache[cache_key] = (best, signal)
+        if live and (stored is None or live["price_inr"] < stored["price_inr"]):
+            leg_cache[pkey] = {**live, "ts": now.isoformat()}
+            best = live
+            print(f"  [LEG] {origin}→{dest} {date}: ₹{live['price_inr']:,} (banked)")
+        elif stored:
+            best = {"price_inr": stored["price_inr"], "airline": stored["airline"], "stops": stored["stops"]}
+            src = "live≥cache" if live else "cache (fetch failed)"
+            print(f"  [LEG] {origin}→{dest} {date}: ₹{stored['price_inr']:,} ({src})")
+        else:
+            best = live  # None if both failed
+            if not live:
+                print(f"  [MISS] {origin}→{dest} {date}: no live fare, none banked")
+
+        fetch_leg.memo[memo_key] = (best, signal)
         return best, signal
-    fetch_leg.cache = {}
+    fetch_leg.memo = {}
 
     combos = [
         (days_out, stay)
@@ -498,12 +552,14 @@ def run_live(cfg):
             print(f"  [NO CANDIDATE] {key}: no valid INR legs found across all windows")
 
     print()
+    save_leg_cache(leg_cache)  # bank this run's legs for future combinations
     deals = merge_deals(cfg, candidates, cities, now, scanned_keys)
     publish(cfg, deals, now, history_records)
 
     print(f"\n=== SCAN COMPLETE ===")
     print(f"  Routes scanned : {sorted(scanned_keys)}")
     print(f"  API calls made : {total_calls[0]}")
+    print(f"  Legs banked    : {len(leg_cache)}")
     print(f"  Deals on board : {len(deals)}")
 
 

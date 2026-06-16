@@ -37,6 +37,6 @@ jobs:
         run: |
           git config user.name  "faredrop-bot"
           git config user.email "faredrop-bot@users.noreply.github.com"
-          git add deals.json deals.js history.json
+          git add deals.json deals.js history.json legs.json
           git commit -m "update deals $(date -u '+%Y-%m-%dT%H:%M:%SZ')" || echo "no changes to commit"
           git push
