@@ -2,12 +2,12 @@
   "currency": "INR",
   "enabled_routes": ["DEL-DPS", "BOM-BKK"],
   "fetch_mode": "local",
-  "fetch_retries": 2,
+  "fetch_retries": 1,
   "interline_hubs": {
-    "DEL-DPS": ["SGN", "KUL", "SIN"],
-    "BOM-BKK": ["SIN", "KUL"]
+    "DEL-DPS": ["SGN", "KUL"],
+    "BOM-BKK": []
   },
-  "interline_overnight": true,
+  "interline_overnight": false,
   "history_days": 90,
   "min_samples_for_typical": 8,
   "min_drop_to_show": 0.20,

@@ -300,6 +300,20 @@ def _route_label(legs):
     return "→".join([legs[0]["from"]] + [l["to"] for l in legs])
 
 
+def leg_requests(o, d, date, hubs, overnight):
+    """Every (from, to, date) leg cheapest_path(o,d,date) will look up — so we
+    can prefetch them in a randomized order (avoids always starving the same
+    combos when Google rate-limits the runner mid-run)."""
+    reqs = [(o, d, date)]
+    for h in hubs:
+        if h in (o, d):
+            continue
+        reqs.append((o, h, date))
+        for cd in [date] + ([_next_day(date)] if overnight else []):
+            reqs.append((h, d, cd))
+    return reqs
+
+
 def cheapest_path(fetch_leg, o, d, date, hubs, overnight):
     """Cheapest way to fly o→d departing `date`: a direct fare, or a separate-
     ticket self-transfer via one of `hubs` (Google 'Cheapest' / Kiwi-style
@@ -389,7 +403,7 @@ def run_live(cfg):
                 total_calls[0] += 1
                 msg = str(exc).splitlines()[0][:80]
                 print(f"  [ERROR] {origin}→{dest} {date} (try {attempt}): {msg}")
-                time.sleep(random.uniform(3, 7))  # backoff before retry
+                time.sleep(random.uniform(8, 15))  # cool-off; timeouts mean rate-limiting
 
         fetch_leg.cache[cache_key] = (best, signal)
         return best, signal
@@ -403,6 +417,26 @@ def run_live(cfg):
     hubs_by_route = cfg.get("interline_hubs", {})
     overnight = cfg.get("interline_overnight", False)
 
+    # Phase 1: enumerate every leg we'll need, dedupe, fetch in random order.
+    # Randomizing means a mid-run rate-limit block starves a *different* slice
+    # each day, so the cheapest-ever board fills in coverage over several runs.
+    pending = set()
+    for route in routes:
+        o, d = route["from"], route["to"]
+        hubs = hubs_by_route.get(f"{o}-{d}", [])
+        for days_out, stay in combos:
+            dep = (now + timedelta(days=days_out)).strftime("%Y-%m-%d")
+            ret = (now + timedelta(days=days_out + stay)).strftime("%Y-%m-%d")
+            pending.update(leg_requests(o, d, dep, hubs, overnight))
+            pending.update(leg_requests(d, o, ret, hubs, overnight))
+    pending = list(pending)
+    random.shuffle(pending)
+    print(f"  Prefetching {len(pending)} unique legs (randomized order)…\n")
+    for a, b, dt in pending:
+        fetch_leg(a, b, dt)
+
+    # Phase 2: combine cached legs into the cheapest round trip per route.
+    print()
     for route in routes:
         o, d = route["from"], route["to"]
         key = f"{o}-{d}"
