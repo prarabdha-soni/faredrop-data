@@ -1,11 +1,18 @@
 {
   "currency": "INR",
   "enabled_routes": ["DEL-DPS", "BOM-BKK"],
+  "fetch_mode": "local",
+  "fetch_retries": 2,
+  "interline_hubs": {
+    "DEL-DPS": ["SGN", "KUL", "SIN"],
+    "BOM-BKK": ["SIN", "KUL"]
+  },
+  "interline_overnight": true,
   "history_days": 90,
   "min_samples_for_typical": 8,
   "min_drop_to_show": 0.20,
   "family_size_for_savings": 4,
-  "date_windows_days_out": [25, 50, 80],
+  "date_windows_days_out": [50, 80],
   "stay_nights": [10, 14],
   "routes": [
     {"from":"DEL","to":"JED"},{"from":"BOM","to":"JED"},

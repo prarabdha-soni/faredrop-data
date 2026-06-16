@@ -129,6 +129,8 @@ def make_deal(candidate, cities, now, first_seen):
         "return_airline": candidate.get("return_airline"),
         "return_stops": candidate.get("return_stops"),
         "return_price_inr": candidate.get("return_price_inr"),
+        "outbound_legs": candidate.get("outbound_legs"),
+        "return_legs": candidate.get("return_legs"),
         "first_seen": first_seen,
         "last_updated": now.isoformat().replace("+00:00", "Z"),
     }
@@ -285,6 +287,67 @@ def cheapest_oneway(query, origin, dest, date, currency, mode):
     return best, signal
 
 
+def _next_day(date_str):
+    return (datetime.strptime(date_str, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
+
+
+def _leg_rec(frm, to, date, leg):
+    return {"from": frm, "to": to, "date": date,
+            "airline": leg["airline"], "stops": leg["stops"], "price_inr": leg["price_inr"]}
+
+
+def _route_label(legs):
+    return "→".join([legs[0]["from"]] + [l["to"] for l in legs])
+
+
+def cheapest_path(fetch_leg, o, d, date, hubs, overnight):
+    """Cheapest way to fly o→d departing `date`: a direct fare, or a separate-
+    ticket self-transfer via one of `hubs` (Google 'Cheapest' / Kiwi-style
+    virtual interlining). Returns {price_inr, legs[], signal} or None.
+
+    `legs` is one record for a direct flight, or two (o→hub, hub→d) for a
+    self-transfer; with `overnight` the hub→d leg is also tried the next day.
+    """
+    best = None
+    direct, sig = fetch_leg(o, d, date)
+    if direct:
+        best = {"price_inr": direct["price_inr"], "legs": [_leg_rec(o, d, date, direct)], "signal": sig}
+
+    for h in hubs:
+        if h in (o, d):
+            continue
+        l1, s1 = fetch_leg(o, h, date)
+        if not l1:
+            continue
+        for cd in [date] + ([_next_day(date)] if overnight else []):
+            l2, _ = fetch_leg(h, d, cd)
+            if not l2:
+                continue
+            total = l1["price_inr"] + l2["price_inr"]
+            if best is None or total < best["price_inr"]:
+                best = {
+                    "price_inr": total,
+                    "legs": [_leg_rec(o, h, date, l1), _leg_rec(h, d, cd, l2)],
+                    "signal": s1,
+                }
+    return best
+
+
+def build_multicity_url(legs, currency):
+    """Deep-link the exact (possibly multi-leg, separate-ticket) itinerary."""
+    from fast_flights.filter import TFSData
+    from fast_flights.flights_impl import FlightData, Passengers
+
+    fd = [FlightData(date=l["date"], from_airport=l["from"], to_airport=l["to"]) for l in legs]
+    b64 = TFSData.from_interface(
+        flight_data=fd,
+        trip="multi-city" if len(fd) > 1 else "one-way",
+        seat="economy",
+        passengers=Passengers(adults=1, children=0, infants_in_seat=0, infants_on_lap=0),
+    ).as_b64().decode("utf-8")
+    return "https://www.google.com/travel/flights?" + urlencode({"tfs": b64, "hl": "en", "curr": currency})
+
+
 def run_live(cfg):
     # Lazy-import fast-flights ONLY in the real path.
     # We call get_flights_from_filter directly (instead of the public get_flights
@@ -315,8 +378,7 @@ def run_live(cfg):
         best, signal = None, None
         for attempt in range(1, retries + 2):
             if total_calls[0] > 0:
-                sleep_s = random.uniform(2.5, 5.5)
-                time.sleep(sleep_s)
+                time.sleep(random.uniform(1.5, 3.5))
             try:
                 best, signal = cheapest_oneway(query, origin, dest, date, currency, mode)
                 total_calls[0] += 1
@@ -338,49 +400,61 @@ def run_live(cfg):
         for days_out in cfg["date_windows_days_out"]
         for stay in cfg["stay_nights"]
     ]
+    hubs_by_route = cfg.get("interline_hubs", {})
+    overnight = cfg.get("interline_overnight", False)
 
     for route in routes:
         o, d = route["from"], route["to"]
         key = f"{o}-{d}"
+        hubs = hubs_by_route.get(key, [])
         best_combo = None
+        out_cache, ret_cache = {}, {}
 
         for days_out, stay in combos:
-            dep_dt = now + timedelta(days=days_out)
-            ret_dt = dep_dt + timedelta(days=stay)
-            dep = dep_dt.strftime("%Y-%m-%d")
-            ret = ret_dt.strftime("%Y-%m-%d")
+            dep = (now + timedelta(days=days_out)).strftime("%Y-%m-%d")
+            ret = (now + timedelta(days=days_out + stay)).strftime("%Y-%m-%d")
 
-            out_best, out_sig = fetch_leg(o, d, dep)   # outbound leg
-            ret_best, _ = fetch_leg(d, o, ret)         # return leg
-            if not out_best or not ret_best:
+            if dep not in out_cache:
+                out_cache[dep] = cheapest_path(fetch_leg, o, d, dep, hubs, overnight)   # outbound
+            if ret not in ret_cache:
+                ret_cache[ret] = cheapest_path(fetch_leg, d, o, ret, hubs, overnight)   # return
+            out, back = out_cache[dep], ret_cache[ret]
+            if not out or not back:
                 continue
 
-            total = out_best["price_inr"] + ret_best["price_inr"]
+            total = out["price_inr"] + back["price_inr"]
             if best_combo is None or total < best_combo["price_inr"]:
+                all_legs = out["legs"] + back["legs"]
+                out_label, ret_label = _route_label(out["legs"]), _route_label(back["legs"])
+                interline = len(out["legs"]) > 1 or len(back["legs"]) > 1
                 best_combo = {
                     "origin": o,
                     "dest": d,
                     "price_inr": total,
-                    "airline": f"{out_best['airline']} + {ret_best['airline']}",
-                    "stops": out_best["stops"],
+                    "airline": f"{out_label} / {ret_label}",
+                    "stops": (len(out["legs"]) - 1) + (len(back["legs"]) - 1),
                     "depart_date": dep,
                     "return_date": ret,
-                    "google_signal": out_sig,
-                    "google_flights_url": build_google_url(o, d, dep, ret),
-                    "fare_type": "separate_tickets",
-                    "outbound_airline": out_best["airline"],
-                    "outbound_stops": out_best["stops"],
-                    "outbound_price_inr": out_best["price_inr"],
-                    "return_airline": ret_best["airline"],
-                    "return_stops": ret_best["stops"],
-                    "return_price_inr": ret_best["price_inr"],
+                    "google_signal": out["signal"],
+                    "google_flights_url": build_multicity_url(all_legs, currency),
+                    "fare_type": "virtual_interline" if interline else "separate_tickets",
+                    "outbound_airline": out_label,
+                    "outbound_stops": len(out["legs"]) - 1,
+                    "outbound_price_inr": out["price_inr"],
+                    "return_airline": ret_label,
+                    "return_stops": len(back["legs"]) - 1,
+                    "return_price_inr": back["price_inr"],
+                    "outbound_legs": out["legs"],
+                    "return_legs": back["legs"],
                 }
 
         if best_combo:
             candidates[key] = best_combo
             print(f"  [CHEAPEST] {key}: ₹{best_combo['price_inr']:,} "
+                  f"[{best_combo['airline']}] "
                   f"({best_combo['outbound_price_inr']:,} + {best_combo['return_price_inr']:,}) "
-                  f"dep {best_combo['depart_date']} ret {best_combo['return_date']}")
+                  f"dep {best_combo['depart_date']} ret {best_combo['return_date']} "
+                  f"type={best_combo['fare_type']}")
             history_records.append({
                 "route": key,
                 "price_inr": best_combo["price_inr"],
