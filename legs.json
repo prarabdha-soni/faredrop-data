@@ -1,0 +1,242 @@
+{
+  "DPS-SIN-2026-09-18": {
+    "price_inr": 5577,
+    "airline": "KLM",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "BKK-BOM-2026-08-15": {
+    "price_inr": 13918,
+    "airline": "Thai Vietjet Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-BOM-2026-08-19": {
+    "price_inr": 12547,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DEL-2026-08-15": {
+    "price_inr": 14390,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DPS-2026-09-05": {
+    "price_inr": 11672,
+    "airline": "Scoot",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-KUL-2026-09-14": {
+    "price_inr": 9622,
+    "airline": "AirAsia",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-BOM-2026-09-14": {
+    "price_inr": 18377,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DPS-2026-08-06": {
+    "price_inr": 17207,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "BKK-KUL-2026-09-18": {
+    "price_inr": 14477,
+    "airline": "Malaysia Airlines",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DPS-2026-08-05": {
+    "price_inr": 13346,
+    "airline": "Vietjet",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-KUL-2026-08-15": {
+    "price_inr": 10692,
+    "airline": "AirAsia",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DEL-2026-08-19": {
+    "price_inr": 14390,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DPS-2026-08-06": {
+    "price_inr": 14536,
+    "airline": "Vietjet",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-KUL-2026-09-18": {
+    "price_inr": 9543,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-BOM-2026-08-20": {
+    "price_inr": 13713,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "BKK-KUL-2026-08-19": {
+    "price_inr": 11879,
+    "airline": "Malaysia Airlines",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-DEL-2026-08-19": {
+    "price_inr": 22689,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DPS-2026-09-04": {
+    "price_inr": 11073,
+    "airline": "Vietjet",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DEL-2026-08-20": {
+    "price_inr": 14390,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DEL-2026-08-15": {
+    "price_inr": 18776,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DEL-2026-09-14": {
+    "price_inr": 19864,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DEL-2026-09-18": {
+    "price_inr": 14436,
+    "airline": "AirAsia X",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "BKK-KUL-2026-09-14": {
+    "price_inr": 11879,
+    "airline": "Malaysia Airlines",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-DEL-2026-08-15": {
+    "price_inr": 23683,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-BOM-2026-09-19": {
+    "price_inr": 13713,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DEL-2026-08-16": {
+    "price_inr": 11870,
+    "airline": "AirAsia, AirAsia X",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DEL-2026-09-15": {
+    "price_inr": 16255,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DEL-DPS-2026-08-05": {
+    "price_inr": 21981,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DEL-2026-08-19": {
+    "price_inr": 14356,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-BOM-2026-09-15": {
+    "price_inr": 15118,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DPS-2026-08-05": {
+    "price_inr": 14764,
+    "airline": "Scoot",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "KUL-DPS-2026-09-05": {
+    "price_inr": 9085,
+    "airline": "Scoot",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DPS-SIN-2026-09-14": {
+    "price_inr": 7328,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DPS-2026-09-04": {
+    "price_inr": 12952,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SIN-DEL-2026-08-19": {
+    "price_inr": 20937,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "SGN-DEL-2026-09-19": {
+    "price_inr": 12299,
+    "airline": "AirAsia, AirAsia X",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "BOM-KUL-2026-08-05": {
+    "price_inr": 12769,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DEL-KUL-2026-08-05": {
+    "price_inr": 12414,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DEL-SIN-2026-09-04": {
+    "price_inr": 11884,
+    "airline": "AirAsia X, AirAsia",
+    "stops": 1,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  },
+  "DEL-KUL-2026-09-04": {
+    "price_inr": 12414,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-16T20:41:52.568985+00:00"
+  }
+}
