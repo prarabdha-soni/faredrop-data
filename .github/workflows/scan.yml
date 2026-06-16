@@ -27,6 +27,9 @@ jobs:
           python -m pip install -r requirements.txt
           python -c "from fast_flights import FlightData, Passengers, get_flights; print('fast-flights import OK')"
 
+      - name: Install Playwright Chromium
+        run: python -m playwright install --with-deps chromium
+
       - name: Run scanner
         run: python scanner.py
 

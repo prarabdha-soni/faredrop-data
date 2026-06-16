@@ -256,7 +256,7 @@ def run_demo(cfg):
 # LIVE MODE
 # ---------------------------------------------------------------------------
 
-def cheapest_oneway(query, origin, dest, date, currency):
+def cheapest_oneway(query, origin, dest, date, currency, mode):
     """Cheapest valid INR one-way fare for origin→dest on date.
 
     Returns (best_dict|None, google_signal). best_dict has price_inr/airline/stops.
@@ -272,7 +272,7 @@ def cheapest_oneway(query, origin, dest, date, currency):
             passengers=Passengers(adults=1, children=0, infants_in_seat=0, infants_on_lap=0),
         ),
         currency=currency,
-        mode="fallback",
+        mode=mode,
     )
     signal = getattr(result, "current_price", None)
     best = None
@@ -293,6 +293,10 @@ def run_live(cfg):
     from fast_flights.core import get_flights_from_filter as query  # noqa: lazy import
 
     currency = cfg.get("currency", "INR")
+    # 'local' runs a real headless Chromium on the runner (reliable); 'fallback'
+    # depends on the now-turnstile-gated try.playwright.tech demo and mostly 401s.
+    mode = cfg.get("fetch_mode", "local")
+    retries = cfg.get("fetch_retries", 2)
     now = datetime.now(timezone.utc)
     cities = cfg["cities"]
     routes = scan_routes(cfg)
@@ -303,22 +307,28 @@ def run_live(cfg):
     total_calls = [0]  # mutable counter shared with the throttled fetch helper
 
     def fetch_leg(origin, dest, date):
-        """One throttled, error-tolerant one-way lookup; caches by (o,d,date)."""
+        """One throttled, retrying one-way lookup; caches by (o,d,date)."""
         cache_key = (origin, dest, date)
         if cache_key in fetch_leg.cache:
             return fetch_leg.cache[cache_key]
-        if total_calls[0] > 0:
-            sleep_s = random.uniform(2.5, 5.5)
-            print(f"  [throttle] sleeping {sleep_s:.1f}s …")
-            time.sleep(sleep_s)
-        try:
-            best, signal = cheapest_oneway(query, origin, dest, date, currency)
-            total_calls[0] += 1
-            tag = f"₹{best['price_inr']:,}" if best else "no INR fare"
-            print(f"  [LEG] {origin}→{dest} {date}: {tag}")
-        except Exception as exc:
-            best, signal = None, None
-            print(f"  [ERROR] {origin}→{dest} {date}: {exc}")
+
+        best, signal = None, None
+        for attempt in range(1, retries + 2):
+            if total_calls[0] > 0:
+                sleep_s = random.uniform(2.5, 5.5)
+                time.sleep(sleep_s)
+            try:
+                best, signal = cheapest_oneway(query, origin, dest, date, currency, mode)
+                total_calls[0] += 1
+                tag = f"₹{best['price_inr']:,}" if best else "no INR fare"
+                print(f"  [LEG] {origin}→{dest} {date}: {tag}")
+                break
+            except Exception as exc:
+                total_calls[0] += 1
+                msg = str(exc).splitlines()[0][:80]
+                print(f"  [ERROR] {origin}→{dest} {date} (try {attempt}): {msg}")
+                time.sleep(random.uniform(3, 7))  # backoff before retry
+
         fetch_leg.cache[cache_key] = (best, signal)
         return best, signal
     fetch_leg.cache = {}
