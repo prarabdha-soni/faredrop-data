@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-16T06:21:46.366533Z",
+  "generated_at": "2026-06-16T06:35:45.500341Z",
   "routes_watched": 12,
   "deals": [
     {
