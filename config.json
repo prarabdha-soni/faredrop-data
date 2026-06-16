@@ -1,5 +1,6 @@
 {
   "currency": "INR",
+  "enabled_routes": ["DEL-DPS", "BOM-BKK"],
   "history_days": 90,
   "min_samples_for_typical": 8,
   "min_drop_to_show": 0.20,
