@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T06:35:45.500341Z",
+  "generated_at": "2026-06-16T08:09:57.620408Z",
   "routes_watched": 12,
   "deals": [
     {
@@ -52,7 +52,7 @@
       "destination": "BKK",
       "origin_city": "Mumbai",
       "dest_city": "Bangkok",
-      "price_inr": 24076,
+      "price_inr": 22825,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
@@ -60,13 +60,20 @@
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
       "google_signal": "high",
-      "airline": "",
-      "stops": "Unknown",
-      "depart_date": "2026-08-04",
-      "return_date": "2026-08-18",
-      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+BOM+to+BKK+on+2026-08-04+through+2026-08-18",
-      "first_seen": "2026-06-15T22:35:14.461437Z",
-      "last_updated": "2026-06-15T22:35:14.461437Z"
+      "airline": "Thai Vietjet Air + Thai Vietjet Air",
+      "stops": 0,
+      "depart_date": "2026-09-04",
+      "return_date": "2026-09-14",
+      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+BOM+to+BKK+on+2026-09-04+through+2026-09-14",
+      "fare_type": "separate_tickets",
+      "outbound_airline": "Thai Vietjet Air",
+      "outbound_stops": 0,
+      "outbound_price_inr": 10753,
+      "return_airline": "Thai Vietjet Air",
+      "return_stops": 0,
+      "return_price_inr": 12072,
+      "first_seen": "2026-06-16T08:09:57.620408Z",
+      "last_updated": "2026-06-16T08:09:57.620408Z"
     },
     {
       "id": "DEL-DXB",
