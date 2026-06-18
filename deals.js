@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-17T07:32:37.605007Z",
+  "generated_at": "2026-06-18T07:14:52.264244Z",
   "routes_watched": 12,
   "deals": [
     {
@@ -52,7 +52,7 @@ window.DEALS = {
       "destination": "BKK",
       "origin_city": "Mumbai",
       "dest_city": "Bangkok",
-      "price_inr": 22812,
+      "price_inr": 23470,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
@@ -62,38 +62,38 @@ window.DEALS = {
       "google_signal": "high",
       "airline": "BOM\u2192BKK / BKK\u2192BOM",
       "stops": 0,
-      "depart_date": "2026-09-04",
-      "return_date": "2026-09-14",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDRqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTE0agUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
+      "depart_date": "2026-08-07",
+      "return_date": "2026-08-17",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMDdqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA4LTE3agUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
       "fare_type": "separate_tickets",
       "outbound_airline": "BOM\u2192BKK",
       "outbound_stops": 0,
-      "outbound_price_inr": 10747,
+      "outbound_price_inr": 11488,
       "return_airline": "BKK\u2192BOM",
       "return_stops": 0,
-      "return_price_inr": 12065,
+      "return_price_inr": 11982,
       "outbound_legs": [
         {
           "from": "BOM",
           "to": "BKK",
-          "date": "2026-09-04",
+          "date": "2026-08-07",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 10747
+          "price_inr": 11488
         }
       ],
       "return_legs": [
         {
           "from": "BKK",
           "to": "BOM",
-          "date": "2026-09-14",
+          "date": "2026-08-17",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 12065
+          "price_inr": 11982
         }
       ],
-      "first_seen": "2026-06-16T10:03:32.302547Z",
-      "last_updated": "2026-06-16T10:03:32.302547Z"
+      "first_seen": "2026-06-18T07:14:52.264244Z",
+      "last_updated": "2026-06-18T07:14:52.264244Z"
     },
     {
       "id": "DEL-DXB",
@@ -189,48 +189,56 @@ window.DEALS = {
       "destination": "DPS",
       "origin_city": "Delhi",
       "dest_city": "Bali",
-      "price_inr": 43806,
+      "price_inr": 43521,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
       "family_savings_inr": null,
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
-      "google_signal": "high",
-      "airline": "DEL\u2192DPS / DPS\u2192DEL",
-      "stops": 0,
-      "depart_date": "2026-09-05",
-      "return_date": "2026-09-19",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDVqBRIDREVMcgUSA0RQUxoaEgoyMDI2LTA5LTE5agUSA0RQU3IFEgNERUxCAQFIAZgBAw%3D%3D&hl=en&curr=INR",
-      "fare_type": "separate_tickets",
-      "outbound_airline": "DEL\u2192DPS",
-      "outbound_stops": 0,
-      "outbound_price_inr": 20916,
+      "google_signal": "typical",
+      "airline": "DEL\u2192KUL\u2192DPS / DPS\u2192DEL",
+      "stops": 1,
+      "depart_date": "2026-09-06",
+      "return_date": "2026-09-16",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDZqBRIDREVMcgUSA0tVTBoaEgoyMDI2LTA5LTA2agUSA0tVTHIFEgNEUFMaGhIKMjAyNi0wOS0xNmoFEgNEUFNyBRIDREVMQgEBSAGYAQM%3D&hl=en&curr=INR",
+      "fare_type": "virtual_interline",
+      "outbound_airline": "DEL\u2192KUL\u2192DPS",
+      "outbound_stops": 1,
+      "outbound_price_inr": 21058,
       "return_airline": "DPS\u2192DEL",
       "return_stops": 0,
-      "return_price_inr": 22890,
+      "return_price_inr": 22463,
       "outbound_legs": [
         {
           "from": "DEL",
+          "to": "KUL",
+          "date": "2026-09-06",
+          "airline": "AirAsia X",
+          "stops": 0,
+          "price_inr": 12012
+        },
+        {
+          "from": "KUL",
           "to": "DPS",
-          "date": "2026-09-05",
-          "airline": "Vietjet",
-          "stops": 1,
-          "price_inr": 20916
+          "date": "2026-09-06",
+          "airline": "Batik Air",
+          "stops": 0,
+          "price_inr": 9046
         }
       ],
       "return_legs": [
         {
           "from": "DPS",
           "to": "DEL",
-          "date": "2026-09-19",
-          "airline": "Batik Air",
+          "date": "2026-09-16",
+          "airline": "Vietjet",
           "stops": 1,
-          "price_inr": 22890
+          "price_inr": 22463
         }
       ],
-      "first_seen": "2026-06-17T07:32:37.605007Z",
-      "last_updated": "2026-06-17T07:32:37.605007Z"
+      "first_seen": "2026-06-18T07:14:52.264244Z",
+      "last_updated": "2026-06-18T07:14:52.264244Z"
     },
     {
       "id": "DEL-JED",
