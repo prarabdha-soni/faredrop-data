@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-18T07:14:52.264244Z",
+  "generated_at": "2026-06-19T07:35:37.932959Z",
   "routes_watched": 12,
   "deals": [
     {
@@ -25,6 +25,55 @@ window.DEALS = {
       "last_updated": "2026-06-15T22:35:14.461437Z"
     },
     {
+      "id": "BOM-BKK",
+      "origin": "BOM",
+      "destination": "BKK",
+      "origin_city": "Mumbai",
+      "dest_city": "Bangkok",
+      "price_inr": 21862,
+      "typical_inr": null,
+      "drop_pct": null,
+      "savings_inr": null,
+      "family_savings_inr": null,
+      "lowest_in_days": null,
+      "typical_source": "cheapest_ever",
+      "google_signal": "high",
+      "airline": "BOM\u2192BKK / BKK\u2192BOM",
+      "stops": 0,
+      "depart_date": "2026-09-07",
+      "return_date": "2026-09-21",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDdqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTIxagUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
+      "fare_type": "separate_tickets",
+      "outbound_airline": "BOM\u2192BKK",
+      "outbound_stops": 0,
+      "outbound_price_inr": 10625,
+      "return_airline": "BKK\u2192BOM",
+      "return_stops": 0,
+      "return_price_inr": 11237,
+      "outbound_legs": [
+        {
+          "from": "BOM",
+          "to": "BKK",
+          "date": "2026-09-07",
+          "airline": "Thai Vietjet Air",
+          "stops": 0,
+          "price_inr": 10625
+        }
+      ],
+      "return_legs": [
+        {
+          "from": "BKK",
+          "to": "BOM",
+          "date": "2026-09-21",
+          "airline": "Thai Vietjet Air",
+          "stops": 0,
+          "price_inr": 11237
+        }
+      ],
+      "first_seen": "2026-06-19T07:35:37.932959Z",
+      "last_updated": "2026-06-19T07:35:37.932959Z"
+    },
+    {
       "id": "BLR-SIN",
       "origin": "BLR",
       "destination": "SIN",
@@ -45,55 +94,6 @@ window.DEALS = {
       "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+BLR+to+SIN+on+2026-09-03+through+2026-09-13",
       "first_seen": "2026-06-15T22:35:14.461437Z",
       "last_updated": "2026-06-15T22:35:14.461437Z"
-    },
-    {
-      "id": "BOM-BKK",
-      "origin": "BOM",
-      "destination": "BKK",
-      "origin_city": "Mumbai",
-      "dest_city": "Bangkok",
-      "price_inr": 23470,
-      "typical_inr": null,
-      "drop_pct": null,
-      "savings_inr": null,
-      "family_savings_inr": null,
-      "lowest_in_days": null,
-      "typical_source": "cheapest_ever",
-      "google_signal": "high",
-      "airline": "BOM\u2192BKK / BKK\u2192BOM",
-      "stops": 0,
-      "depart_date": "2026-08-07",
-      "return_date": "2026-08-17",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMDdqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA4LTE3agUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
-      "fare_type": "separate_tickets",
-      "outbound_airline": "BOM\u2192BKK",
-      "outbound_stops": 0,
-      "outbound_price_inr": 11488,
-      "return_airline": "BKK\u2192BOM",
-      "return_stops": 0,
-      "return_price_inr": 11982,
-      "outbound_legs": [
-        {
-          "from": "BOM",
-          "to": "BKK",
-          "date": "2026-08-07",
-          "airline": "Thai Vietjet Air",
-          "stops": 0,
-          "price_inr": 11488
-        }
-      ],
-      "return_legs": [
-        {
-          "from": "BKK",
-          "to": "BOM",
-          "date": "2026-08-17",
-          "airline": "Thai Vietjet Air",
-          "stops": 0,
-          "price_inr": 11982
-        }
-      ],
-      "first_seen": "2026-06-18T07:14:52.264244Z",
-      "last_updated": "2026-06-18T07:14:52.264244Z"
     },
     {
       "id": "DEL-DXB",
@@ -189,56 +189,48 @@ window.DEALS = {
       "destination": "DPS",
       "origin_city": "Delhi",
       "dest_city": "Bali",
-      "price_inr": 43521,
+      "price_inr": 39776,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
       "family_savings_inr": null,
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
-      "google_signal": "typical",
-      "airline": "DEL\u2192KUL\u2192DPS / DPS\u2192DEL",
-      "stops": 1,
-      "depart_date": "2026-09-06",
-      "return_date": "2026-09-16",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDZqBRIDREVMcgUSA0tVTBoaEgoyMDI2LTA5LTA2agUSA0tVTHIFEgNEUFMaGhIKMjAyNi0wOS0xNmoFEgNEUFNyBRIDREVMQgEBSAGYAQM%3D&hl=en&curr=INR",
-      "fare_type": "virtual_interline",
-      "outbound_airline": "DEL\u2192KUL\u2192DPS",
-      "outbound_stops": 1,
-      "outbound_price_inr": 21058,
+      "google_signal": "high",
+      "airline": "DEL\u2192DPS / DPS\u2192DEL",
+      "stops": 0,
+      "depart_date": "2026-09-07",
+      "return_date": "2026-09-17",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDdqBRIDREVMcgUSA0RQUxoaEgoyMDI2LTA5LTE3agUSA0RQU3IFEgNERUxCAQFIAZgBAw%3D%3D&hl=en&curr=INR",
+      "fare_type": "separate_tickets",
+      "outbound_airline": "DEL\u2192DPS",
+      "outbound_stops": 0,
+      "outbound_price_inr": 21115,
       "return_airline": "DPS\u2192DEL",
       "return_stops": 0,
-      "return_price_inr": 22463,
+      "return_price_inr": 18661,
       "outbound_legs": [
         {
           "from": "DEL",
-          "to": "KUL",
-          "date": "2026-09-06",
-          "airline": "AirAsia X",
-          "stops": 0,
-          "price_inr": 12012
-        },
-        {
-          "from": "KUL",
           "to": "DPS",
-          "date": "2026-09-06",
-          "airline": "Batik Air",
-          "stops": 0,
-          "price_inr": 9046
+          "date": "2026-09-07",
+          "airline": "Vietjet",
+          "stops": 1,
+          "price_inr": 21115
         }
       ],
       "return_legs": [
         {
           "from": "DPS",
           "to": "DEL",
-          "date": "2026-09-16",
-          "airline": "Vietjet",
+          "date": "2026-09-17",
+          "airline": "AirAsia, AirAsia X",
           "stops": 1,
-          "price_inr": 22463
+          "price_inr": 18661
         }
       ],
-      "first_seen": "2026-06-18T07:14:52.264244Z",
-      "last_updated": "2026-06-18T07:14:52.264244Z"
+      "first_seen": "2026-06-19T07:35:37.932959Z",
+      "last_updated": "2026-06-19T07:35:37.932959Z"
     },
     {
       "id": "DEL-JED",
