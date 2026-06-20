@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-19T07:35:37.932959Z",
+  "generated_at": "2026-06-20T06:45:06.682625Z",
   "routes_watched": 12,
   "deals": [
     {
@@ -30,48 +30,48 @@ window.DEALS = {
       "destination": "BKK",
       "origin_city": "Mumbai",
       "dest_city": "Bangkok",
-      "price_inr": 21862,
+      "price_inr": 21768,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
       "family_savings_inr": null,
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
-      "google_signal": "high",
+      "google_signal": "typical",
       "airline": "BOM\u2192BKK / BKK\u2192BOM",
       "stops": 0,
-      "depart_date": "2026-09-07",
-      "return_date": "2026-09-21",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMDdqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTIxagUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
+      "depart_date": "2026-08-09",
+      "return_date": "2026-08-19",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMDlqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA4LTE5agUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
       "fare_type": "separate_tickets",
       "outbound_airline": "BOM\u2192BKK",
       "outbound_stops": 0,
-      "outbound_price_inr": 10625,
+      "outbound_price_inr": 9873,
       "return_airline": "BKK\u2192BOM",
       "return_stops": 0,
-      "return_price_inr": 11237,
+      "return_price_inr": 11895,
       "outbound_legs": [
         {
           "from": "BOM",
           "to": "BKK",
-          "date": "2026-09-07",
+          "date": "2026-08-09",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 10625
+          "price_inr": 9873
         }
       ],
       "return_legs": [
         {
           "from": "BKK",
           "to": "BOM",
-          "date": "2026-09-21",
+          "date": "2026-08-19",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 11237
+          "price_inr": 11895
         }
       ],
-      "first_seen": "2026-06-19T07:35:37.932959Z",
-      "last_updated": "2026-06-19T07:35:37.932959Z"
+      "first_seen": "2026-06-20T06:45:06.682625Z",
+      "last_updated": "2026-06-20T06:45:06.682625Z"
     },
     {
       "id": "BLR-SIN",
