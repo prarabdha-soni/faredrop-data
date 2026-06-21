@@ -292,6 +292,7 @@ def demo_base_price(origin, dest):
         "DEL-MED": 29000, "DEL-DXB": 22000, "BOM-BKK": 19000,
         "DEL-DPS": 35000, "BLR-SIN": 17000, "DEL-ALA": 26000,
         "DEL-GYD": 24000, "DEL-TBS": 27000, "DEL-KTM": 9000,
+        "DEL-MLE": 28000, "DEL-ZRH": 52000, "DEL-NRT": 48000,
     }
     return bases.get(f"{origin}-{dest}", 25000)
 

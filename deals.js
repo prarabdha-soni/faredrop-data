@@ -1,6 +1,6 @@
 window.DEALS = {
   "generated_at": "2026-06-21T07:14:44.601731Z",
-  "routes_watched": 12,
+  "routes_watched": 15,
   "deals": [
     {
       "id": "DEL-KTM",
@@ -94,6 +94,28 @@ window.DEALS = {
       "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+BLR+to+SIN+on+2026-09-03+through+2026-09-13",
       "first_seen": "2026-06-15T22:35:14.461437Z",
       "last_updated": "2026-06-15T22:35:14.461437Z"
+    },
+    {
+      "id": "DEL-MLE",
+      "origin": "DEL",
+      "destination": "MLE",
+      "origin_city": "Delhi",
+      "dest_city": "Male",
+      "price_inr": 28900,
+      "typical_inr": null,
+      "drop_pct": null,
+      "savings_inr": null,
+      "family_savings_inr": null,
+      "lowest_in_days": null,
+      "typical_source": "cheapest_ever",
+      "google_signal": "typical",
+      "airline": "IndiGo",
+      "stops": 0,
+      "depart_date": "2026-09-10",
+      "return_date": "2026-09-20",
+      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+DEL+to+MLE+on+2026-09-10+through+2026-09-20",
+      "first_seen": "2026-06-16T20:41:52.568985Z",
+      "last_updated": "2026-06-16T20:41:52.568985Z"
     },
     {
       "id": "DEL-DXB",
@@ -307,6 +329,28 @@ window.DEALS = {
       "last_updated": "2026-06-15T22:35:14.461437Z"
     },
     {
+      "id": "DEL-NRT",
+      "origin": "DEL",
+      "destination": "NRT",
+      "origin_city": "Delhi",
+      "dest_city": "Tokyo",
+      "price_inr": 48700,
+      "typical_inr": null,
+      "drop_pct": null,
+      "savings_inr": null,
+      "family_savings_inr": null,
+      "lowest_in_days": null,
+      "typical_source": "cheapest_ever",
+      "google_signal": "typical",
+      "airline": "All Nippon Airways",
+      "stops": 1,
+      "depart_date": "2026-10-08",
+      "return_date": "2026-10-22",
+      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+DEL+to+NRT+on+2026-10-08+through+2026-10-22",
+      "first_seen": "2026-06-16T20:41:52.568985Z",
+      "last_updated": "2026-06-16T20:41:52.568985Z"
+    },
+    {
       "id": "DEL-TBS",
       "origin": "DEL",
       "destination": "TBS",
@@ -327,6 +371,28 @@ window.DEALS = {
       "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+DEL+to+TBS+on+2026-09-03+through+2026-09-17",
       "first_seen": "2026-06-15T22:35:14.461437Z",
       "last_updated": "2026-06-15T22:35:14.461437Z"
+    },
+    {
+      "id": "DEL-ZRH",
+      "origin": "DEL",
+      "destination": "ZRH",
+      "origin_city": "Delhi",
+      "dest_city": "Zurich",
+      "price_inr": 52300,
+      "typical_inr": null,
+      "drop_pct": null,
+      "savings_inr": null,
+      "family_savings_inr": null,
+      "lowest_in_days": null,
+      "typical_source": "cheapest_ever",
+      "google_signal": "high",
+      "airline": "Swiss",
+      "stops": 1,
+      "depart_date": "2026-12-05",
+      "return_date": "2026-12-19",
+      "google_flights_url": "https://www.google.com/travel/flights?q=Flights+from+DEL+to+ZRH+on+2026-12-05+through+2026-12-19",
+      "first_seen": "2026-06-16T20:41:52.568985Z",
+      "last_updated": "2026-06-16T20:41:52.568985Z"
     }
   ]
 };

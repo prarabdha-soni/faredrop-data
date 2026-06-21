@@ -1,11 +1,14 @@
 {
   "currency": "INR",
-  "enabled_routes": ["DEL-DPS", "BOM-BKK"],
+  "enabled_routes": ["BOM-BKK", "DEL-DPS", "DEL-MLE", "DEL-ZRH", "DEL-NRT"],
   "fetch_mode": "local",
   "fetch_retries": 1,
   "interline_hubs": {
     "DEL-DPS": ["SGN", "KUL", "SIN"],
-    "BOM-BKK": ["KUL"]
+    "BOM-BKK": ["KUL"],
+    "DEL-MLE": ["CMB", "DXB", "BLR"],
+    "DEL-ZRH": ["DXB", "DOH", "AUH"],
+    "DEL-NRT": ["BKK", "SIN", "HKG"]
   },
   "interline_overnight": true,
   "deal_max_age_days": 1,
@@ -22,13 +25,17 @@
     {"from":"DEL","to":"DXB"},{"from":"BOM","to":"BKK"},
     {"from":"DEL","to":"DPS"},{"from":"BLR","to":"SIN"},
     {"from":"DEL","to":"ALA"},{"from":"DEL","to":"GYD"},
-    {"from":"DEL","to":"TBS"},{"from":"DEL","to":"KTM"}
+    {"from":"DEL","to":"TBS"},{"from":"DEL","to":"KTM"},
+    {"from":"DEL","to":"MLE"},{"from":"DEL","to":"ZRH"},
+    {"from":"DEL","to":"NRT"}
   ],
   "cities": {
     "DEL":"Delhi","BOM":"Mumbai","BLR":"Bengaluru","LKO":"Lucknow",
     "HYD":"Hyderabad","CCU":"Kolkata","MAA":"Chennai","CCJ":"Kozhikode",
     "JED":"Jeddah","MED":"Madinah","DXB":"Dubai","BKK":"Bangkok","DPS":"Bali",
     "KUL":"Kuala Lumpur","SIN":"Singapore","CMB":"Colombo","GYD":"Baku",
-    "ALA":"Almaty","TBS":"Tbilisi","KTM":"Kathmandu","HKT":"Phuket"
+    "ALA":"Almaty","TBS":"Tbilisi","KTM":"Kathmandu","HKT":"Phuket",
+    "MLE":"Male","ZRH":"Zurich","NRT":"Tokyo","DOH":"Doha","AUH":"Abu Dhabi",
+    "HKG":"Hong Kong"
   }
 }
