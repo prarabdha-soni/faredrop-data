@@ -492,10 +492,10 @@
     "ts": "2026-06-18T07:14:52.264244+00:00"
   },
   "KUL-BOM-2026-09-20": {
-    "price_inr": 12383,
+    "price_inr": 12265,
     "airline": "Batik Air",
     "stops": 0,
-    "ts": "2026-06-18T07:14:52.264244+00:00"
+    "ts": "2026-06-21T08:07:38.210088+00:00"
   },
   "SIN-DPS-2026-09-06": {
     "price_inr": 10498,
@@ -570,10 +570,10 @@
     "ts": "2026-06-21T07:14:44.601731+00:00"
   },
   "BKK-BOM-2026-09-19": {
-    "price_inr": 12806,
+    "price_inr": 12669,
     "airline": "Thai Vietjet Air",
     "stops": 0,
-    "ts": "2026-06-17T07:32:37.605007+00:00"
+    "ts": "2026-06-21T08:07:38.210088+00:00"
   },
   "DPS-SGN-2026-08-16": {
     "price_inr": 15442,
@@ -1698,10 +1698,10 @@
     "ts": "2026-06-21T07:14:44.601731+00:00"
   },
   "KUL-BKK-2026-09-10": {
-    "price_inr": 12675,
+    "price_inr": 10578,
     "airline": "Malaysia Airlines",
     "stops": 0,
-    "ts": "2026-06-21T07:14:44.601731+00:00"
+    "ts": "2026-06-21T08:07:38.210088+00:00"
   },
   "DEL-SGN-2026-09-09": {
     "price_inr": 15485,
@@ -1846,5 +1846,1001 @@
     "airline": "Batik Air",
     "stops": 0,
     "ts": "2026-06-21T07:14:44.601731+00:00"
+  },
+  "MLE-DXB-2026-08-24": {
+    "price_inr": 44249,
+    "airline": "flydubai",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-HKG-2026-08-20": {
+    "price_inr": 14818,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-MLE-2026-09-10": {
+    "price_inr": 12030,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DEL-2026-09-23": {
+    "price_inr": 29223,
+    "airline": "Etihad",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-08-20": {
+    "price_inr": 25017,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-NRT-2026-09-09": {
+    "price_inr": 33529,
+    "airline": "Thai AirAsia X",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-NRT-2026-08-10": {
+    "price_inr": 31149,
+    "airline": "IndiGo, JAL",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-ZRH-2026-08-10": {
+    "price_inr": 33697,
+    "airline": "Emirates",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-09-24": {
+    "price_inr": 20590,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-NRT-2026-09-09": {
+    "price_inr": 19073,
+    "airline": "Hong Kong Express",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-ZRH-2026-08-10": {
+    "price_inr": 27587,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "KUL-BKK-2026-08-11": {
+    "price_inr": 12675,
+    "airline": "Malaysia Airlines",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-HKG-2026-09-19": {
+    "price_inr": 20566,
+    "airline": "Hong Kong Express",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-BLR-2026-09-19": {
+    "price_inr": 18961,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-08-24": {
+    "price_inr": 13023,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-09-20": {
+    "price_inr": 13229,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-BKK-2026-08-24": {
+    "price_inr": 17370,
+    "airline": "Thai Vietjet Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-MLE-2026-09-10": {
+    "price_inr": 14043,
+    "airline": "Chongqing Airlines",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-MLE-2026-09-09": {
+    "price_inr": 35832,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-08-24": {
+    "price_inr": 7989,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-BLR-2026-09-09": {
+    "price_inr": 7629,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-MLE-2026-09-10": {
+    "price_inr": 35832,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-09-23": {
+    "price_inr": 29062,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-DEL-2026-09-23": {
+    "price_inr": 22965,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-HKG-2026-08-10": {
+    "price_inr": 20172,
+    "airline": "Air India",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-ZRH-2026-08-10": {
+    "price_inr": 26405,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-ZRH-2026-09-10": {
+    "price_inr": 23041,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-BLR-2026-09-23": {
+    "price_inr": 18961,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-NRT-2026-09-10": {
+    "price_inr": 19073,
+    "airline": "Hong Kong Express",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-08-21": {
+    "price_inr": 29303,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-HKG-2026-09-23": {
+    "price_inr": 15070,
+    "airline": "Hong Kong Express",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-08-25": {
+    "price_inr": 17465,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-CMB-2026-09-23": {
+    "price_inr": 20445,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "SIN-NRT-2026-08-11": {
+    "price_inr": 19560,
+    "airline": "Scoot",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "KUL-DEL-2026-08-25": {
+    "price_inr": 15912,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-DXB-2026-09-09": {
+    "price_inr": 18193,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DOH-2026-08-20": {
+    "price_inr": 30014,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DPS-SIN-2026-08-24": {
+    "price_inr": 11917,
+    "airline": "TransNusa",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-MLE-2026-08-10": {
+    "price_inr": 20542,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-09-19": {
+    "price_inr": 19728,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-09-20": {
+    "price_inr": 19728,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DEL-2026-09-19": {
+    "price_inr": 25288,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-ZRH-2026-08-11": {
+    "price_inr": 27587,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-CMB-2026-08-20": {
+    "price_inr": 21386,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DXB-2026-09-19": {
+    "price_inr": 25559,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-CMB-2026-09-19": {
+    "price_inr": 20445,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-09-19": {
+    "price_inr": 13691,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-AUH-2026-08-10": {
+    "price_inr": 25103,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DXB-2026-08-24": {
+    "price_inr": 27342,
+    "airline": "AJet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-HKG-2026-08-24": {
+    "price_inr": 17157,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-09-20": {
+    "price_inr": 18460,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-09-20": {
+    "price_inr": 20875,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-BLR-2026-08-10": {
+    "price_inr": 7419,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-09-19": {
+    "price_inr": 20875,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-NRT-2026-08-11": {
+    "price_inr": 21441,
+    "airline": "Thai Vietjet Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DEL-2026-08-20": {
+    "price_inr": 29692,
+    "airline": "Etihad",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-09-23": {
+    "price_inr": 13229,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-08-20": {
+    "price_inr": 20691,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-AUH-2026-09-09": {
+    "price_inr": 20220,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-09-20": {
+    "price_inr": 7989,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-NRT-2026-08-10": {
+    "price_inr": 16421,
+    "airline": "Hong Kong Express",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-08-24": {
+    "price_inr": 19728,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-08-25": {
+    "price_inr": 13023,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-BKK-2026-09-09": {
+    "price_inr": 16150,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-MLE-2026-08-10": {
+    "price_inr": 18642,
+    "airline": "Emirates",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-SIN-2026-09-19": {
+    "price_inr": 37302,
+    "airline": "Philippine Airlines",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-SIN-2026-08-24": {
+    "price_inr": 16621,
+    "airline": "Scoot",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-08-24": {
+    "price_inr": 17465,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-09-23": {
+    "price_inr": 13691,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-09-20": {
+    "price_inr": 13691,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-08-20": {
+    "price_inr": 7989,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-ZRH-2026-09-10": {
+    "price_inr": 29102,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-SIN-2026-08-20": {
+    "price_inr": 16621,
+    "airline": "Scoot",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-ZRH-2026-09-09": {
+    "price_inr": 33697,
+    "airline": "Emirates",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-09-24": {
+    "price_inr": 7989,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-08-21": {
+    "price_inr": 8619,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-09-20": {
+    "price_inr": 27232,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-MLE-2026-09-09": {
+    "price_inr": 17117,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DOH-2026-09-23": {
+    "price_inr": 21573,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-09-19": {
+    "price_inr": 16688,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-DEL-2026-08-20": {
+    "price_inr": 25349,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-SIN-2026-09-23": {
+    "price_inr": 19625,
+    "airline": "ZIPAIR Tokyo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-08-24": {
+    "price_inr": 19658,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-MLE-2026-08-10": {
+    "price_inr": 37707,
+    "airline": "flydubai",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-DXB-2026-08-10": {
+    "price_inr": 23594,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-09-23": {
+    "price_inr": 17350,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-09-24": {
+    "price_inr": 13691,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-DEL-2026-08-24": {
+    "price_inr": 25349,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-08-21": {
+    "price_inr": 14667,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DEL-2026-08-20": {
+    "price_inr": 27169,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-08-21": {
+    "price_inr": 15974,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-BKK-2026-09-19": {
+    "price_inr": 29274,
+    "airline": "Hong Kong Express",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DXB-2026-09-23": {
+    "price_inr": 44249,
+    "airline": "flydubai",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-SGN-2026-08-10": {
+    "price_inr": 15560,
+    "airline": "Vietjet",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-MLE-2026-08-10": {
+    "price_inr": 12828,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-08-21": {
+    "price_inr": 13691,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-MLE-2026-09-09": {
+    "price_inr": 13342,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-CMB-2026-08-24": {
+    "price_inr": 20445,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-08-24": {
+    "price_inr": 29303,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DXB-2026-08-20": {
+    "price_inr": 44249,
+    "airline": "flydubai",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-NRT-2026-09-09": {
+    "price_inr": 15928,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-09-24": {
+    "price_inr": 16688,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-BLR-2026-08-24": {
+    "price_inr": 18961,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-08-25": {
+    "price_inr": 7701,
+    "airline": "Air India Express",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DEL-2026-09-23": {
+    "price_inr": 25288,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-AUH-2026-09-23": {
+    "price_inr": 17001,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DEL-2026-09-19": {
+    "price_inr": 29223,
+    "airline": "Etihad",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-08-24": {
+    "price_inr": 14667,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-09-24": {
+    "price_inr": 16387,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DXB-2026-08-20": {
+    "price_inr": 27342,
+    "airline": "AJet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-09-19": {
+    "price_inr": 7779,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-MLE-2026-08-11": {
+    "price_inr": 14043,
+    "airline": "Chongqing Airlines",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-NRT-2026-08-11": {
+    "price_inr": 15928,
+    "airline": "Jetstar",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "SIN-NRT-2026-08-10": {
+    "price_inr": 20994,
+    "airline": "Jeju Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-AUH-2026-08-20": {
+    "price_inr": 30718,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "SIN-NRT-2026-09-09": {
+    "price_inr": 21425,
+    "airline": "Scoot",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-ZRH-2026-08-11": {
+    "price_inr": 27458,
+    "airline": "AJet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-09-19": {
+    "price_inr": 29062,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-09-24": {
+    "price_inr": 13229,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-08-20": {
+    "price_inr": 14667,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-09-24": {
+    "price_inr": 27232,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-DPS-2026-08-10": {
+    "price_inr": 23462,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-08-21": {
+    "price_inr": 20691,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DOH-2026-08-24": {
+    "price_inr": 29663,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-08-25": {
+    "price_inr": 19658,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-MLE-2026-08-11": {
+    "price_inr": 35832,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-NRT-2026-08-10": {
+    "price_inr": 22146,
+    "airline": "Jeju Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-ZRH-2026-08-11": {
+    "price_inr": 32478,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-09-19": {
+    "price_inr": 14513,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-ZRH-2026-09-09": {
+    "price_inr": 25977,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-DEL-2026-09-19": {
+    "price_inr": 46664,
+    "airline": "JAL, IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-DEL-2026-08-25": {
+    "price_inr": 29303,
+    "airline": "Batik Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-BLR-2026-08-20": {
+    "price_inr": 19999,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-DEL-2026-08-25": {
+    "price_inr": 20691,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-AUH-2026-09-19": {
+    "price_inr": 20401,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-DEL-2026-08-25": {
+    "price_inr": 14667,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "HKG-NRT-2026-09-10": {
+    "price_inr": 14254,
+    "airline": "Hong Kong Express",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "AUH-ZRH-2026-09-09": {
+    "price_inr": 23169,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-BKK-2026-08-20": {
+    "price_inr": 17370,
+    "airline": "Thai Vietjet Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-08-20": {
+    "price_inr": 19658,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-DEL-2026-08-20": {
+    "price_inr": 13023,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DEL-2026-08-24": {
+    "price_inr": 26228,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "MLE-DXB-2026-09-19": {
+    "price_inr": 40145,
+    "airline": "Qatar Airways",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-HKG-2026-09-09": {
+    "price_inr": 18611,
+    "airline": "Malaysia Airlines",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-DEL-2026-09-23": {
+    "price_inr": 7779,
+    "airline": "IndiGo",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DEL-2026-08-24": {
+    "price_inr": 29223,
+    "airline": "Etihad",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-CMB-2026-08-10": {
+    "price_inr": 17122,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-09-23": {
+    "price_inr": 20590,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-ZRH-2026-09-10": {
+    "price_inr": 27712,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-DOH-2026-09-09": {
+    "price_inr": 25394,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "CMB-MLE-2026-09-09": {
+    "price_inr": 18642,
+    "airline": "Emirates",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DXB-2026-09-23": {
+    "price_inr": 26947,
+    "airline": "AJet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-CMB-2026-09-09": {
+    "price_inr": 17122,
+    "airline": "SriLankan",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-08-20": {
+    "price_inr": 16688,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "NRT-BKK-2026-09-23": {
+    "price_inr": 17370,
+    "airline": "Thai Vietjet Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-ZRH-2026-08-10": {
+    "price_inr": 28360,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-DOH-2026-08-10": {
+    "price_inr": 23094,
+    "airline": "Gulf Air",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DOH-DEL-2026-08-21": {
+    "price_inr": 19943,
+    "airline": "Air Arabia",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-AUH-2026-08-24": {
+    "price_inr": 24152,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BKK-DEL-2026-09-23": {
+    "price_inr": 15189,
+    "airline": "Vietjet",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DXB-ZRH-2026-09-09": {
+    "price_inr": 26508,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-BKK-2026-08-10": {
+    "price_inr": 16150,
+    "airline": "IndiGo",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "BLR-MLE-2026-08-11": {
+    "price_inr": 12828,
+    "airline": "SriLankan",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "DEL-KUL-2026-09-09": {
+    "price_inr": 12411,
+    "airline": "Batik Air",
+    "stops": 0,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "ZRH-DOH-2026-09-19": {
+    "price_inr": 25559,
+    "airline": "Pegasus",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
+  },
+  "SIN-NRT-2026-09-10": {
+    "price_inr": 18741,
+    "airline": "Cebu Pacific",
+    "stops": 1,
+    "ts": "2026-06-21T08:07:38.210088+00:00"
   }
 }
