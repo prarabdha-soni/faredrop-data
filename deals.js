@@ -1,5 +1,5 @@
 window.DEALS = {
-  "generated_at": "2026-06-23T06:31:18.602547Z",
+  "generated_at": "2026-06-24T06:28:32.588173Z",
   "routes_watched": 15,
   "deals": [
     {
@@ -52,7 +52,7 @@ window.DEALS = {
       "destination": "BKK",
       "origin_city": "Mumbai",
       "dest_city": "Bangkok",
-      "price_inr": 23386,
+      "price_inr": 26038,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
@@ -62,38 +62,38 @@ window.DEALS = {
       "google_signal": "high",
       "airline": "BOM\u2192BKK / BKK\u2192BOM",
       "stops": 0,
-      "depart_date": "2026-09-10",
-      "return_date": "2026-09-20",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMTBqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTIwagUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
+      "depart_date": "2026-09-12",
+      "return_date": "2026-09-22",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMTJqBRIDQk9NcgUSA0JLSxoaEgoyMDI2LTA5LTIyagUSA0JLS3IFEgNCT01CAQFIAZgBAw%3D%3D&hl=en&curr=INR",
       "fare_type": "separate_tickets",
       "outbound_airline": "BOM\u2192BKK",
       "outbound_stops": 0,
-      "outbound_price_inr": 10625,
+      "outbound_price_inr": 13512,
       "return_airline": "BKK\u2192BOM",
       "return_stops": 0,
-      "return_price_inr": 12761,
+      "return_price_inr": 12526,
       "outbound_legs": [
         {
           "from": "BOM",
           "to": "BKK",
-          "date": "2026-09-10",
+          "date": "2026-09-12",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 10625
+          "price_inr": 13512
         }
       ],
       "return_legs": [
         {
           "from": "BKK",
           "to": "BOM",
-          "date": "2026-09-20",
+          "date": "2026-09-22",
           "airline": "Thai Vietjet Air",
           "stops": 0,
-          "price_inr": 12761
+          "price_inr": 12526
         }
       ],
-      "first_seen": "2026-06-22T08:35:28.485609Z",
-      "last_updated": "2026-06-22T08:35:28.485609Z"
+      "first_seen": "2026-06-24T06:28:32.588173Z",
+      "last_updated": "2026-06-24T06:28:32.588173Z"
     },
     {
       "id": "DEL-DXB",
@@ -440,48 +440,56 @@ window.DEALS = {
       "destination": "ZRH",
       "origin_city": "Delhi",
       "dest_city": "Zurich",
-      "price_inr": 62914,
+      "price_inr": 65907,
       "typical_inr": null,
       "drop_pct": null,
       "savings_inr": null,
       "family_savings_inr": null,
       "lowest_in_days": null,
       "typical_source": "cheapest_ever",
-      "google_signal": "typical",
-      "airline": "DEL\u2192ZRH / ZRH\u2192DEL",
-      "stops": 0,
-      "depart_date": "2026-08-11",
-      "return_date": "2026-08-25",
-      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDgtMTFqBRIDREVMcgUSA1pSSBoaEgoyMDI2LTA4LTI1agUSA1pSSHIFEgNERUxCAQFIAZgBAw%3D%3D&hl=en&curr=INR",
-      "fare_type": "separate_tickets",
+      "google_signal": "high",
+      "airline": "DEL\u2192ZRH / ZRH\u2192AUH\u2192DEL",
+      "stops": 1,
+      "depart_date": "2026-09-12",
+      "return_date": "2026-09-22",
+      "google_flights_url": "https://www.google.com/travel/flights?tfs=GhoSCjIwMjYtMDktMTJqBRIDREVMcgUSA1pSSBoaEgoyMDI2LTA5LTIyagUSA1pSSHIFEgNBVUgaGhIKMjAyNi0wOS0yM2oFEgNBVUhyBRIDREVMQgEBSAGYAQM%3D&hl=en&curr=INR",
+      "fare_type": "virtual_interline",
       "outbound_airline": "DEL\u2192ZRH",
       "outbound_stops": 0,
-      "outbound_price_inr": 33697,
-      "return_airline": "ZRH\u2192DEL",
-      "return_stops": 0,
-      "return_price_inr": 29217,
+      "outbound_price_inr": 35769,
+      "return_airline": "ZRH\u2192AUH\u2192DEL",
+      "return_stops": 1,
+      "return_price_inr": 30138,
       "outbound_legs": [
         {
           "from": "DEL",
           "to": "ZRH",
-          "date": "2026-08-11",
+          "date": "2026-09-12",
           "airline": "Emirates",
           "stops": 1,
-          "price_inr": 33697
+          "price_inr": 35769
         }
       ],
       "return_legs": [
         {
           "from": "ZRH",
-          "to": "DEL",
-          "date": "2026-08-25",
-          "airline": "Etihad",
+          "to": "AUH",
+          "date": "2026-09-22",
+          "airline": "Pegasus",
           "stops": 1,
-          "price_inr": 29217
+          "price_inr": 16909
+        },
+        {
+          "from": "AUH",
+          "to": "DEL",
+          "date": "2026-09-23",
+          "airline": "Gulf Air",
+          "stops": 1,
+          "price_inr": 13229
         }
       ],
-      "first_seen": "2026-06-22T08:35:28.485609Z",
-      "last_updated": "2026-06-22T08:35:28.485609Z"
+      "first_seen": "2026-06-24T06:28:32.588173Z",
+      "last_updated": "2026-06-24T06:28:32.588173Z"
     }
   ]
 };
